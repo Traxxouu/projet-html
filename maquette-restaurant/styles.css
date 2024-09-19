@@ -1,0 +1,445 @@
+
+/*--------Loader---------*/
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Fond noir */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    --cell-size: 52px;
+    --cell-spacing: 1px;
+    --cells: 3;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--total-size);
+    height: var(--total-size);
+}
+
+.cell {
+    flex: 0 0 var(--cell-size);
+    margin: var(--cell-spacing);
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 4px;
+    animation: 1.5s ripple ease infinite;
+}
+
+.cell.d-1 { animation-delay: 100ms; }
+.cell.d-2 { animation-delay: 200ms; }
+.cell.d-3 { animation-delay: 300ms; }
+.cell.d-4 { animation-delay: 400ms; }
+
+
+.cell:nth-child(1) { --cell-color: #ff0099; }
+.cell:nth-child(2) { --cell-color: #fd0cc1; }
+.cell:nth-child(3) { --cell-color: #ee00ff; }
+.cell:nth-child(4) { --cell-color: #d400ff; }
+.cell:nth-child(5) { --cell-color: #8c00ff; }
+.cell:nth-child(6) { --cell-color: #5500ff; }
+.cell:nth-child(7) { --cell-color: #1e00ff; }
+.cell:nth-child(8) { --cell-color: #0048ff; }
+.cell:nth-child(9) { --cell-color: #0066ff; }
+
+
+/*Creation d'animation*/
+@keyframes ripple {
+    0% { background-color: transparent; }
+    30% { background-color: var(--cell-color); }
+    60% { background-color: transparent; }
+    100% { background-color: transparent; }
+}
+
+/* Animation d'apparition pour le contenu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-element {
+    animation: fadeIn 1s ease forwards;
+}
+
+
+
+
+
+
+
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+
+/*--------Location---------*/
+.location-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.location {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+
+/*--------Hero - banniere---------*/
+.hero {
+    background-image: url('media/background-restaurant.png');
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* à reduire */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #8A2BE2;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    transition: 200ms;
+    background-color: #ffbf00;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 50px;
+}
+
+/* Permettre au texte d'etre plus visible sur l'image*/
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.54);
+    z-index: 1;
+}
+
+.hero h1, .hero p, .hero button {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+/*--------Steps - etapes---------*/
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 30px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.step {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Numéros des étapes dans le coin haut gauche */
+.step-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.step i {
+    font-size: 3rem;
+    color: #8A2BE2;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+/*--------Carte - restaurants---------*/
+.restaurants {
+    background-color: #f0f0f0;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Douce transition */
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* ajustement */
+    gap: 20px;
+}
+
+.restaurant {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant:hover {
+    transform: translateY(0px); /* Légère élévation de la carte */ /*A supprimer ?*/
+    /*transition: 200ms;*/
+    box-shadow: 0 0 20px rgb(0, 0, 0); /* Ajoute une ombre plus prononcée */
+}
+
+
+.restaurant img {
+    width: 100%;
+    height: 150px; /* Reduire */
+    object-fit: cover; 
+}
+
+.restaurant-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.restaurant-info i {
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.restaurant-info i:hover {
+    color: rgb(3, 124, 25);
+}
+
+.restaurant-info i.clicked {
+    color: rgb(255, 0, 0);
+    animation: heartClick 0.4s ease;
+}
+
+
+@keyframes heartClick {
+    0% {
+        transform: scale(1);
+        color: rgb(255, 0, 0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Pour les images dans les cartes */
+.restaurant img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+/* Permet de recadrer les images dans les cartes */
+#moov1 {
+    object-position: 20% 40%; /* Recentre l'image pour montrer le haut */
+}
+
+#moov2 {
+    object-position: 20% 25%; /* Un peu plus bas que le haut */
+}
+
+#moov3 {
+    object-position: 30% 30%; /* Centrage vertical personnalisé */
+}
+
+#moov4{
+    object-position: 20% 38%;
+}
+
+
+
+
+
+
+/*--------Footer---------*/
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/*--------responsive---------*/
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row for mobile */
+        gap: 10px; /* Reduced gap for mobile */
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .restaurant-info {
+        display: block; /* Retour à l'alignement vertical pour les mobiles */
+        text-align: center; /* Centrer le texte sur mobile */
+    }
+}
+
+/* Tablet and Desktop Responsive Styles */
+@media (min-width: 768px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .restaurant-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .restaurant-info h3, 
+    .restaurant-info p {
+        text-align: left; 
+        margin: 0;
+    }
+
+    .restaurant-info i {
+        font-size: 1.5rem;
+        color: #ccc;
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .restaurant-info i:hover {
+        color: rgb(3, 124, 25); /* Changement de couleur lors du survol */
+    }
+
+    /* Ajuster l'image pour qu'elle prenne moins de place verticalement */
+    .restaurant img {
+        height: 120px; /* Ajuster la hauteur de l'image */
+        object-fit: cover; 
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+    .restaurant img {
+        height: 120px; 
+    }
+}
