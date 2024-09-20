@@ -248,7 +248,21 @@ h3{
     object-position:  0% 25%; /* mona lisa */
 }
 
+body.light-mode .blue{
+    color: rgb(0, 0, 255);
+    font-weight: bolder;
+}
 
+body.dark-mode .blue{
+    color: #00ffff;
+    font-weight: bolder;
+}
+
+span.red{
+    color: rgb(255, 51, 0);
+    font-style: italic;
+    font-weight: bold;
+}
 
 /*------------------VIDEO------------------*/
 .video-section {
