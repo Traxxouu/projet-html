@@ -1,0 +1,319 @@
+/* Styles généraux */
+
+/*------------------MODE S/C------------------*/
+/* Styles pour le mode sombre (par défaut) */
+body.dark-mode {
+    background-color: #1c1c1c; 
+    color: #ffffff; 
+}
+
+body.dark-mode header nav ul li a {
+    color: #ffd700; 
+}
+
+body.dark-mode .banner {
+    background-image: url('media/background-dark.webp');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+body.dark-mode .gallery {
+    background-image: url(media/background-dark.webp);
+}
+
+/* Styles pour le mode clair */
+body.light-mode {
+    background-color: #f0f0f0; 
+    color: #333333; 
+}
+
+body.light-mode header nav ul li a {
+    color: #ffffff; 
+}
+
+body.light-mode .banner {
+    background-image: url('media/background.webp');
+    background-size: cover;
+    background-position: center;
+    color: #333333;
+}
+
+body.light-mode .gallery {
+    background-image: url(media/background.webp); 
+}
+
+body.light-mode .gallery h3{
+    color: white; 
+}
+
+body.light-mode .cta-btn {
+    background-color: #3498db; 
+    color: #000000;
+}
+
+
+body.light-mode .cta-btn:hover {
+    background-color: #ffffff;
+    color: #3498db;
+}
+
+body.light-mode .card{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+body.light-mode .card-info h3 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #000000;
+}
+
+body.light-mode .card-info p {
+    text-align: center;
+    color: #000000;
+    margin: 5px 0;
+}
+
+
+body.dark-mode #theme-toggle-btn{
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+body.dark-mode #theme-toggle-btn:hover{
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 200ms;
+}
+
+body.dark-mode .card:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 10px rgba(255, 215, 0, 0.5);
+}
+
+body.light-mode #theme-toggle-btn{
+    padding: 10px 20px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
+
+body.light-mode #theme-toggle-btn:hover{
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    transition: 200ms;
+}
+
+
+body.light-mode .card:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 10px rgba(0, 187, 255, 0.5);
+}
+
+
+/*------------------NAV------------------*/
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333333;
+}
+
+header nav ul li a {
+    color: #ffd700; 
+    text-decoration: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+header nav ul li a svg.nav-icon {
+    width: 1em; 
+    height: 1em; 
+    fill: currentColor;
+}
+
+header nav ul li a:hover {
+    background: linear-gradient(blue, purple);
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/*------------------BANNER------------------*/
+
+.banner {
+    text-align: center;
+    padding: 50px;
+}
+
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background-color: #ffffff;
+    color: #e74c3c;
+    font-weight: bold;
+    width: 30%;
+    transition: 200ms;
+}
+
+/*------------------GALLERIE TABLEAU------------------*/
+h3{
+    text-align: center;
+    font-size: 25px;
+}
+
+.gallery {
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; 
+}
+
+.card {
+    background-color: #2e2e2e;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    width: 300px; 
+    margin: 0 auto; /* Centrer les cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; 
+}
+
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-info h3 {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.card-info p {
+    margin: 5px 0;
+    color: #f0f0f0;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; 
+    }
+
+    .card {
+        width: 100%; 
+    }
+}
+
+#moov{
+    object-position:  0% 25%; /* mona lisa */
+}
+
+
+
+/*------------------VIDEO------------------*/
+.video-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-section video {
+    width: 100%;
+    max-width: 600px;
+}
+
+.video916 {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        flex-direction: column;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .desktop-nav.active {
+        display: flex;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #444;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .banner {
+        padding: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video169 {
+        display: none;
+    }
+
+    .video916 {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
