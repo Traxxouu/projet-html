@@ -1,5 +1,4 @@
 ## site Hotel
-[Lien site hotel](https://maquette-hotel-mael.netlify.app/)
 
 [Lien site hotel - dynamique](https://traxxouu.online)
 
