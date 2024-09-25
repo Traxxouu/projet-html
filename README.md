@@ -1,6 +1,6 @@
 ## site Hotel
 
-[Lien site hotel - dynamique](https://traxxouu.online)
+[Lien site hotel - dynamique](http://media-hotel.free.nf/)
 
 ## site Restaurant
 [Lien site restaurant](https://maquette-restaurant-mael.netlify.app/)
